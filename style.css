@@ -122,7 +122,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; }
 .separator-left { width: 50px; height: 2px; background: linear-gradient(90deg, var(--gold), transparent); margin: 0 0 30px 0; }
 .mt-20 { margin-top: 20px; }
 
-/* DUGMIĆI */
+/* DUGMIĆI (Ulepšano) */
 .btn {
     display: inline-flex; align-items: center; justify-content: center;
     padding: 16px 40px; border-radius: 50px; font-size: 0.85rem; font-weight: 600;
@@ -130,30 +130,35 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; }
     transition: var(--transition-smooth); text-decoration: none; position: relative; overflow: hidden;
     min-height: 48px;
     text-align: center;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
 }
 .btn-primary {
-    background-color: var(--gold); color: #000; border: 1px solid var(--gold);
-    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.15);
+    background: linear-gradient(135deg, var(--gold), var(--gold-hover)); color: #000; border: none;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2), inset 0 0 10px rgba(255,255,255,0.3);
 }
 .btn-primary:hover {
-    transform: translateY(-3px); box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3); background-color: #e5c358;
+    transform: translateY(-3px); box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+    background: linear-gradient(135deg, #e5c358, var(--gold));
 }
 .btn-primary:active { transform: translateY(-1px) scale(0.98); }
+
 .btn-outline {
-    background-color: transparent; color: var(--gold); border: 1px solid var(--gold); backdrop-filter: blur(5px);
+    background-color: rgba(212, 175, 55, 0.05); color: var(--gold); border: 1px solid var(--gold);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
 .btn-outline:hover {
-    background-color: var(--gold); color: #000; transform: translateY(-3px); box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
+    background-color: var(--gold); color: #000; transform: translateY(-3px); box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
 }
 .btn-outline:active { transform: translateY(-1px) scale(0.98); }
 
-/* GLOVO DUGMIĆI SPECIFIČNI STILOVI */
+/* GLOVO DUGMIĆI SPECIFIČNI STILOVI (Ulepšano) */
 .btn-glovo {
-    background-color: #FFC244; color: #1a1a1a !important; border: 1px solid #FFC244;
-    box-shadow: 0 4px 15px rgba(255, 194, 68, 0.2);
+    background: linear-gradient(135deg, #FFC244, #e5ae3d); color: #1a1a1a !important; border: none;
+    box-shadow: 0 4px 15px rgba(255, 194, 68, 0.2), inset 0 0 10px rgba(255,255,255,0.3);
 }
 .btn-glovo:hover {
-    background-color: #e5ae3d; color: #000 !important; transform: translateY(-3px);
+    background: linear-gradient(135deg, #fcd06d, #FFC244); color: #000 !important; transform: translateY(-3px);
     box-shadow: 0 10px 30px rgba(255, 194, 68, 0.4);
 }
 .btn-glovo:active { transform: translateY(-1px) scale(0.98); }
@@ -477,15 +482,15 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; }
 /* --- PLUTAJUĆE GLOVO DUGME --- */
 .floating-glovo {
     position: fixed;
-    bottom: calc(20px + var(--safe-b));
-    right: 20px;
+    bottom: calc(25px + var(--safe-b));
+    right: 25px;
     z-index: 999;
-    background-color: #FFC244;
+    background: linear-gradient(135deg, #FFC244, #e5ae3d);
     color: #1a1a1a;
     display: flex;
     align-items: center;
     gap: 12px;
-    padding: 14px 28px;
+    padding: 16px 32px;
     border-radius: 50px;
     font-family: var(--font-body);
     font-weight: 700;
@@ -493,14 +498,17 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; }
     text-transform: uppercase;
     letter-spacing: 1px;
     text-decoration: none;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.6), 0 0 20px rgba(255,194,68,0.3);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.8), 0 0 20px rgba(255,194,68,0.4);
+    border: 1px solid rgba(255,255,255,0.2);
     transition: var(--transition-smooth);
     animation: float-bounce 3s infinite ease-in-out;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 .floating-glovo svg { width: 22px; height: 22px; fill: currentColor; }
 .floating-glovo:hover {
     transform: scale(1.05) translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.8), 0 0 30px rgba(255,194,68,0.5);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.9), 0 0 30px rgba(255,194,68,0.6);
     color: #000;
 }
 @keyframes float-bounce {
@@ -554,9 +562,9 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; }
     .hamburger { display: flex; }
     .nav-container { justify-content: flex-end; padding: 12px 24px; }
 
-    /* Hero */
-    .hero-buttons { flex-direction: column; width: 100%; max-width: 320px; margin: 0 auto; gap: 14px; }
-    .hero-buttons .btn { width: 100%; }
+    /* Hero dugmići - Ulepšano za telefon */
+    .hero-buttons { flex-direction: column; width: 100%; max-width: 280px; margin: 0 auto; gap: 16px; }
+    .hero-buttons .btn { width: 100%; border-radius: 50px; font-size: 0.9rem; padding: 15px 20px; box-shadow: 0 5px 20px rgba(0,0,0,0.5); }
 
     .menu-search-input { font-size: 16px; padding: 12px 6px; }
 
@@ -597,20 +605,27 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; }
     .brand-col { max-width: 100%; display: flex; flex-direction: column; align-items: center; }
     .info-item { text-align: left; }
 
-    /* Plutajuće Glovo dugme na telefonu - PUN EKRAN DNO */
+    /* Plutajuće Glovo dugme na telefonu - ELEGANTNA PILULA */
     .floating-glovo {
-        bottom: calc(15px + var(--safe-b));
+        bottom: calc(25px + var(--safe-b));
         left: 50%;
         right: auto;
         transform: translateX(-50%);
-        width: calc(100% - 32px);
+        width: max-content;
+        min-width: 240px;
         justify-content: center;
-        font-size: 1.05rem;
-        padding: 16px 20px;
-        animation: none;
+        font-size: 0.95rem;
+        padding: 14px 28px;
+        animation: float-bounce-mobile 3s infinite ease-in-out;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.9), 0 0 25px rgba(255,194,68,0.3);
     }
-    .floating-glovo:hover { transform: translateX(-50%) scale(1.02); }
+    .floating-glovo:hover { transform: translateX(-50%) scale(1.02) translateY(-2px); }
     .footer { padding-bottom: calc(90px + var(--safe-b)); }
+}
+
+@keyframes float-bounce-mobile {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(-8px); }
 }
 
 @media (max-width: 430px) {
