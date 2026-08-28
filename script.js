@@ -182,8 +182,8 @@ const menuData = {
         ],
         "BREAKFAST (UNTIL 14h)": [
             { name: "Tradition mix", weight: "for 4 people", price: 1850, image: "Meni/DORUCAK/tradicijamix.png", desc: "" },
-            { name: "Breaded stuffed peppers", weight: "", price: 730, image: "Meni/DORUCAK/pohovanepunjenepaprike.png", desc: "" },
-            { name: "Peppers on kajmak", weight: "", price: 650, image: "Meni/DORUCAK/paprikanakajmaku.png", desc: "" },
+            { name: "Breaded stuffed peppers", weight: "", price: 730, image: "Meni/DORUCAK/Pohovanepunjenepaprike.png", desc: "" },
+            { name: "Peppers on kajmak", weight: "", price: 650, image: "Meni/DORUCAK/Paprikanakajmaku.png", desc: "" },
             { name: "Breaded peppers", weight: "", price: 650, image: "Meni/DORUCAK/pohovanepaprike.png", desc: "" },
             { name: "Index sandwich", weight: "", price: 650, image: "Meni/DORUCAK/indexsendvic.png", desc: "" },
             { name: "Tradition breakfast", weight: "", price: 600, image: "Meni/DORUCAK/tradicijadorucak.png", desc: "" },
